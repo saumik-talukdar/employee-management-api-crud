@@ -1,16 +1,17 @@
 
 # Employee Management API (CRUD)
 
-A simple and well-structured **REST API** built with **Spring Boot** for managing employee records. This project follows industry best practices, ensuring clean architecture, modularity, and maintainability.
+A simple and well-structured **REST API** built with **Spring Boot** for managing employee records. This project follows best practices, ensuring clean architecture, modularity, and maintainability.
 
 ## ✨ Features
 
 - 🚀 **CRUD Operations** – Create, Read, Update, and Delete employees.
 - 🌍 **RESTful API** – Follows RESTful design principles.
 - 🛠️ **Spring Boot & JPA** – Built using **Spring Boot** and **Spring Data JPA** for seamless database operations.
-- 🗄️ **Database Support** – Supports **MySQL**.
+- 🗄️ **Database Support** – Supports **MySQL** (with H2 in-memory database as the default).
 - 🏗 **Clean Architecture** – Proper layering with DTOs, Service, and Repository layers.
 - ⚙️ **Best Practices** – Includes exception handling, validation, and structured API responses.
+- ✅ **Email Validation** – Ensures no duplicate email addresses in the database.
 
 ---
 
@@ -18,7 +19,7 @@ A simple and well-structured **REST API** built with **Spring Boot** for managin
 
 - **Spring Boot** – Backend framework
 - **Spring Data JPA** – ORM for database interactions
-- **MySQL** – Database options
+- **MySQL** – Database options (H2 in-memory as the default)
 - **Lombok** – Reduces boilerplate code
 - **Spring Validation** – Validates API requests
 - **Postman** – API testing
@@ -31,13 +32,13 @@ A simple and well-structured **REST API** built with **Spring Boot** for managin
 
 ```sh
 git clone https://github.com/saumik-talukdar/employee-management-api-crud.git
-cd employee-management-api-curd
+cd employee-management-api-crud
 ```
 
 ### 2️⃣ Configure Database (Optional)
 
-- Default: Uses **H2 in-memory database** (No setup required)
-- For **PostgreSQL** or **MySQL**, update `application.properties` in `src/main/resources/`:
+- Default: Uses **H2 in-memory database** (No setup required).
+- For **MySQL** or **PostgreSQL**, update `application.properties` in `src/main/resources/`:
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/your_database
@@ -73,7 +74,9 @@ The API will be available at: `http://localhost:8080/api/employee`
 {
   "name": "John Doe",
   "email": "johndoe@example.com",
-  "position": "Software Engineer"
+  "department": "Software Engineering",
+  "salary": 60000,
+  "joiningDate": "2022-01-15"
 }
 ```
 
@@ -82,7 +85,7 @@ The API will be available at: `http://localhost:8080/api/employee`
 ## 🛠 Project Structure
 
 ```
-src/main/java/com/saumik/employee/
+src/main/java/com/saumik/employeemanagement/
 ├── controller/      # API controllers
 ├── service/         # Business logic
 ├── repository/      # Data access
@@ -99,14 +102,13 @@ src/main/java/com/saumik/employee/
 ✅ **DTOs** for request/response structure  
 ✅ **Exception Handling** with `@ControllerAdvice`  
 ✅ **Global Validation** using `@Valid`  
-✅ **Proper HTTP Status Codes** with `ResponseEntity`
+✅ **Proper HTTP Status Codes** with `ResponseEntity`  
+✅ **Email Validation** to prevent duplicate emails  
+✅ **No ID in DTO** – ID is auto-generated, so it is not included in the DTO
 
----
-
-## 📝 License
-
-This project is open-source and available under the **MIT License**.
 
 ---
 
 🚀 **Happy Coding!** 😊
+
+---
