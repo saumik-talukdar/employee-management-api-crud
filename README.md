@@ -8,7 +8,7 @@ A simple and well-structured **REST API** built with **Spring Boot** for managin
 - 🚀 **CRUD Operations** – Create, Read, Update, and Delete employees.
 - 🌍 **RESTful API** – Follows RESTful design principles.
 - 🛠️ **Spring Boot & JPA** – Built using **Spring Boot** and **Spring Data JPA** for seamless database operations.
-- 🗄️ **Database Support** – Supports **H2, PostgreSQL, and MySQL**.
+- 🗄️ **Database Support** – Supports **MySQL**.
 - 🏗 **Clean Architecture** – Proper layering with DTOs, Service, and Repository layers.
 - ⚙️ **Best Practices** – Includes exception handling, validation, and structured API responses.
 
@@ -18,7 +18,7 @@ A simple and well-structured **REST API** built with **Spring Boot** for managin
 
 - **Spring Boot** – Backend framework
 - **Spring Data JPA** – ORM for database interactions
-- **H2 / PostgreSQL / MySQL** – Database options
+- **MySQL** – Database options
 - **Lombok** – Reduces boilerplate code
 - **Spring Validation** – Validates API requests
 - **Postman** – API testing
@@ -30,8 +30,8 @@ A simple and well-structured **REST API** built with **Spring Boot** for managin
 ### 1️⃣ Clone the Repository
 
 ```sh
-git clone https://github.com/your-username/employee-management-api.git
-cd employee-management-api
+git clone https://github.com/saumik-talukdar/employee-management-api-crud.git
+cd employee-management-api-curd
 ```
 
 ### 2️⃣ Configure Database (Optional)
@@ -53,19 +53,19 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-The API will be available at: `http://localhost:8080/api/employees`
+The API will be available at: `http://localhost:8080/api/employee`
 
 ---
 
 ## 📜 API Endpoints
 
-| Method | Endpoint                 | Description            |
-|--------|--------------------------|------------------------|
-| GET    | `/api/employees`         | Get all employees     |
-| GET    | `/api/employees/{id}`     | Get employee by ID    |
-| POST   | `/api/employees`         | Create a new employee |
-| PUT    | `/api/employees/{id}`     | Update an employee    |
-| DELETE | `/api/employees/{id}`     | Delete an employee    |
+| Method | Endpoint             | Description            |
+|--------|----------------------|------------------------|
+| GET    | `/api/employee`      | Get all employees     |
+| GET    | `/api/employee/{id}` | Get employee by ID    |
+| POST   | `/api/employee`      | Create a new employee |
+| PUT    | `/api/employee/{id}` | Update an employee    |
+| DELETE | `/api/employee/{id}` | Delete an employee    |
 
 📌 **Example Request (Create Employee)**
 
@@ -82,13 +82,13 @@ The API will be available at: `http://localhost:8080/api/employees`
 ## 🛠 Project Structure
 
 ```
-src/main/java/com/example/employee/
+src/main/java/com/saumik/employee/
 ├── controller/      # API controllers
 ├── service/         # Business logic
 ├── repository/      # Data access
 ├── dto/             # Data Transfer Objects (DTOs)
 ├── exception/       # Custom exception handling
-└── model/           # Entity models
+└── entity/           # Entity models
 ```
 
 ---
